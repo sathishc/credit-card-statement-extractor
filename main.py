@@ -6,7 +6,7 @@ from textractor.visualizers.entitylist import EntityList
 from textractor.data.constants import TextractFeatures, Direction, DirectionalFinderType
 
 extractor = Textractor(region_name="us-east-1")
-file_source= "s3://ccs-bucket-332009426877-us-east-1/ccs.pdf"
+file_source= "<Path to S3 bucket>"
 
 queries = [
     "What is the Total Payment Due",
