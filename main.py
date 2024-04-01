@@ -6,7 +6,7 @@ from textractor.visualizers.entitylist import EntityList
 from textractor.data.constants import TextractFeatures, Direction, DirectionalFinderType
 
 extractor = Textractor(region_name="us-east-1")
-file_source= "<Path to S3 bucket>"
+file_source= "s3://ccs-bucket-332009426877-us-east-1/ccs.pdf"
 
 queries = [
     "What is the Total Payment Due",
@@ -17,7 +17,7 @@ queries = [
 ]
 
 
-document = extractor.start_document_analysis(file_source,features=[TextractFeatures.TABLES, TextractFeatures.FORMS, TextractFeatures.QUERIES], queries=queries, save_image=True)
+document = extractor.start_document_analysis(file_source,features=[TextractFeatures.TABLES, TextractFeatures.QUERIES], queries=queries, save_image=True)
 tableList = EntityList(document.tables)
 
 print(document.queries)
